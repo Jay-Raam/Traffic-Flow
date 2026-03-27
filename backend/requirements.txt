@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+pandas
+numpy
+python-socketio
+mcp
+redis
+slowapi
+httpx
+python-dotenv
