@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import "leaflet/dist/leaflet.css";
+
+:root {
+  --font-body: "Manrope", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --bg: radial-gradient(circle at 12% 0%, #e0f2fe 0%, #f8fafc 42%, #f7fee7 100%);
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --panel-bg: rgba(255, 255, 255, 0.86);
+  --panel-border: rgba(148, 163, 184, 0.28);
+  --nav-bg: rgba(255, 255, 255, 0.9);
+  --input-bg: rgba(255, 255, 255, 0.92);
+  --shadow-color: rgba(2, 6, 23, 0.12);
+}
+
+html[data-theme="dark"] {
+  --bg: radial-gradient(circle at 14% 0%, #1e293b 0%, #0b1220 45%, #020617 100%);
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --panel-bg: rgba(15, 23, 42, 0.75);
+  --panel-border: rgba(100, 116, 139, 0.28);
+  --nav-bg: rgba(15, 23, 42, 0.9);
+  --input-bg: rgba(30, 41, 59, 0.85);
+  --shadow-color: rgba(2, 6, 23, 0.45);
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text-main);
+}
+
+.app-shell {
+  background: var(--bg);
+  color: var(--text-main);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+.panel {
+  @apply rounded-2xl p-5;
+  border: 1px solid var(--panel-border);
+  background: var(--panel-bg);
+  box-shadow: 0 14px 40px var(--shadow-color);
+  backdrop-filter: blur(12px);
+}
+
+.subtle-text {
+  color: var(--text-muted);
+}
+
+.nav-shell {
+  background: var(--nav-bg);
+  border: 1px solid var(--panel-border);
+}
+
+.input-surface {
+  background: var(--input-bg);
+  border: 1px solid var(--panel-border);
+  color: var(--text-main);
+}
+
+.leaflet-container {
+  z-index: 1;
+}
+
+.leaflet-top,
+.leaflet-bottom,
+.leaflet-pane,
+.leaflet-control {
+  z-index: 10;
+}
